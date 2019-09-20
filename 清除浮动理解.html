@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>测试清除浮动</title>
+    <style>
+        .container div:not(.clear) {
+            height: 100px;
+            width: 100px;
+        }
+        .one {
+            background: #5fb9e4;
+            float: left;
+        }
+        .two {
+            background: yellowgreen;
+            float: left;
+        }
+        .three {
+            background: lightgray;
+            float: left;
+        }
+        .clearfix {
+            *zoom: 1;
+        }
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container clearfix">
+        <p>这是父元素</p>
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+    </div>
+</body>
+</html>
